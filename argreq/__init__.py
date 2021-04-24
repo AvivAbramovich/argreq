@@ -6,7 +6,7 @@ import functools
 
 import argreq.errors
 
-__VERSION__ = '0.1.0'
+__VERSION__ = '0.1.1'
 
 
 def _find_argument(
@@ -35,7 +35,7 @@ def _check_requirement(name : str, value, req : Union[str, Tuple[str]], type=Non
         else:
             req_with_arg = f'value{_req}'
         if not eval(req_with_arg):
-            raise NotValidArgumentError(value, _req)
+            raise argreq.errors.NotValidArgumentError(value, _req)
     if builtins.type(req) is tuple:
         for _req in req:
             check(_req)

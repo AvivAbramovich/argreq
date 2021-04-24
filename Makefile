@@ -9,5 +9,7 @@ clean:
 	rm -rf dist build argreq.egg-info
 upload:
 	twine upload dist/*
+test:
+	pytest
 rst:
 	m2r --overwrite README.md

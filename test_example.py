@@ -1,9 +1,10 @@
-from argreq import argument, NotValidArgumentError
+from argreq import argument
+from argreq.errors import NotValidArgumentError
 import functools
 import pytest
 
 def return_true(func):
-    functools.wraps(func)
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):
         res = func(*args, **kwargs)
         if res is None:
