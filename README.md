@@ -10,7 +10,7 @@ pip install argreq
 ## Examples
 
 ```python
-from argreq import argument
+from argreq import argument, requirement
 
 @argument('a', '>10', type=int)
 def int_grater_than_10(a):
@@ -37,4 +37,9 @@ def div(a,b):
 def dict_func(d):
     '''Check if d has the key 'a' '''
     print(f'd ({d}) has "a" in it')
+
+@requirement('{a}>{b}>0')
+def a_grater_than_b_and_positives(a, b):
+    '''Check if a is grater then b and both positives'''
+    print(f'{a} > {b}')
 ```
